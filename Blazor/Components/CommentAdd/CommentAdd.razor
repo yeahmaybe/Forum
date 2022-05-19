@@ -1,0 +1,31 @@
+@using Blazor.Data.Models
+@using Blazor.Data.DTOs
+@using Blazor.Services
+
+@inject NavigationManager _navigationManager
+
+<div class="new-comment">
+    <textarea class="content-text" id="content" @bind="commentContent" placeholder="Добавить комментарий"></textarea>
+    <p class="content-add" @onclick="addComment">+</p>
+</div>
+@code {
+    [Parameter] 
+    public int PostId { get; set; }
+    
+    [Inject]
+    ICommentProvider commentProvider { get; set; }
+    private string commentContent;
+
+    private async void addComment()
+    {
+        CommentDTO comment = new CommentDTO();
+        comment.Content = commentContent;
+        comment.Date = DateTime.UtcNow;
+        comment.User = 1;
+        comment.Post = PostId;
+
+        await commentProvider.Add(comment);
+        _navigationManager.NavigateTo($"/post/{PostId}");
+    }
+
+}

@@ -1,0 +1,36 @@
+.forum__label {
+    text-align: center;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 7px 0 rgb(210, 210, 210);
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.forum__new-post {
+    text-align: center;
+    align-self: center;
+    position: relative;
+    height: 70px;
+}
+
+.forum__new-post a{
+    text-decoration: none;
+    color: #2d6db6;
+    font-size: 20px;
+    line-height: 70px;
+    font-weight: 500;
+    
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.forum__new-post a:hover {
+    color: #21599a;
+}

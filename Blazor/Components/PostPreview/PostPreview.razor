@@ -1,0 +1,46 @@
+@using Blazor.Pages
+@using Blazor.Services
+@using Blazor.Data.Models
+
+@inject NavigationManager _navigationManager
+
+@if (post != null)
+{
+   <div class="row justify-content-center">
+      <div class="col-xl-7 box">
+
+         <span class="post-preview__author ">@post.User.Nickname</span>
+         <span class="post-preview__date">@post.Date</span>
+         <h3 class="post-preview__label">@post.Label</h3>
+         <div class="post-preview">
+            <!--<img src="@imageSrc">-->
+            <img/>
+            <div class="popup" @onclick="() => toItem(post)">Читать</div>
+         </div>
+      </div>
+   </div>
+}
+
+@code {
+
+   [Inject]
+   private IPostProvider postProvider { get; set; }
+
+   [Parameter]
+   public int Id { get; set; }
+
+   private Post? post;
+   private string imageSrc;
+
+   protected override async Task OnInitializedAsync()
+   {
+      post = await postProvider.GetOne(Id);
+      imageSrc = "img/post_" + post.Id + "_preview.jpeg";
+   }
+
+   public void toItem(Post post)
+   {
+      _navigationManager.NavigateTo($"/post/{post.Id}");
+   }
+
+}

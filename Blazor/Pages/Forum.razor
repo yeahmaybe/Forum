@@ -1,0 +1,17 @@
+@page "/forum"
+@using Blazor.Components.PostList
+@using Blazor.Components.PostPreview
+@using Blazor.Components.Footer
+
+<h3 class="forum__label">Форум</h3>
+<div class="row justify-content-center">
+    <div class="box forum__new-post col-xl-7">
+        <a href="/post/create">+ Создать новую публикацию</a>
+    </div>
+</div>
+<PostList />
+<Footer />
+
+@code {
+    
+}

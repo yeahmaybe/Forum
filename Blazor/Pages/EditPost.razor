@@ -1,0 +1,57 @@
+@page "/post/{PostId}/edit"
+@using Blazor.Data.Models
+@using Blazor.Services
+@using Blazor.Data.DTOs
+@inject NavigationManager _navigationManager
+
+<div class="row justify-content-center">
+    <div class="box col-xl-7 post-form">
+        <legend>Редактирование публикации</legend>
+        <label class="input-label" for="label">Название</label>
+        <div class="input-wrapper">
+            <input class="input-title" id="label"  @bind="postLabel">
+        </div>
+        <label class="content-label"for="content">Содержимое</label>
+        <textarea class="content-text" id="content" @bind="postContent"></textarea>
+        <div class="post-submit" @onclick="editPost">Подтвердить</div>
+    </div>
+</div>
+@code {
+    [Inject]
+    IUserProvider userProvider { get; set; }
+    
+    [Inject]
+    ICommentProvider commentProvider { get; set; }
+    
+    [Inject]
+    IPostProvider postProvider { get; set; }
+    
+    private string postLabel;
+    private string postContent;
+    
+    [Parameter]
+    public string PostId { get; set; }
+
+    private Post? post;
+
+    protected override async Task OnInitializedAsync()
+    {
+        post = await postProvider.GetOne(Int32.Parse(PostId));
+        postLabel = post.Label;
+        postContent = post.Content;
+    }
+
+    private async void editPost()
+    {
+
+        PostDTO newPost = new PostDTO();
+        newPost.Label = postLabel;
+        newPost.Content = postContent;
+        newPost.Date = post.Date;
+        newPost.User = post.User.Id;
+        newPost.Comments = new[]{0};
+
+        await postProvider.Edit(post.Id, newPost);
+        _navigationManager.NavigateTo($"/post/{PostId}");
+    }
+}
