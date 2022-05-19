@@ -1,0 +1,30 @@
+@using Blazor.Data.Models
+@using Blazor.Services
+@using Blazor.Components.PostPreview
+@using System.Collections
+
+@if (posts != null)
+{
+    @foreach (var post in posts)
+    {
+        <PostPreview Id = "@post.Id"/>
+    }
+}
+@if (posts == null)
+{
+    <p>Записи не найдены</p>
+}
+
+@code{
+    private List<Post>? posts;
+    [Inject]
+    private IPostProvider postProvider { get; set; }
+    [Inject] 
+    private IComparer<Post> comparer { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        posts = await postProvider.GetAll();
+        posts.Sort(comparer);
+    }
+} 

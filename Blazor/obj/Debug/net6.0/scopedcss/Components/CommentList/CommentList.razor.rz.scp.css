@@ -1,0 +1,29 @@
+.box[b-dy0albfftr] {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 7px 0px rgb(233, 233, 233);
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.comments[b-dy0albfftr] {
+    text-align: center;
+    font-size: 18px;
+}
+.list-group[b-dy0albfftr] {
+    margin-top: 15px;
+}
+
+
+.comment__author[b-dy0albfftr] {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.comment__contents[b-dy0albfftr] {
+    color: var(--common-font);
+    font-size: 16px;
+    margin: 10px 0;
+}

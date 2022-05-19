@@ -1,0 +1,40 @@
+@using Blazor.Services
+@using Blazor.Data.Models
+@inject NavigationManager _navigationManager
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item"@onclick="() => EditPost(PostId)" href="">Изменить</a></li>
+        <li><a class="dropdown-item"@onclick="() => RemovePost(PostId)" href="">Удалить</a></li>
+    </ul>
+</div>
+
+@code {
+    [Parameter]
+    public int PostId { get; set; }
+    
+    private Post? post;
+    
+    [Inject]
+    private IPostProvider postProvider { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        post = await postProvider.GetOne(PostId);
+    }
+
+    private async void RemovePost(int id)
+    {
+        await postProvider.Remove(PostId);
+        _navigationManager.NavigateTo("/forum");
+    }
+
+    private async void EditPost(int id)
+    {
+        var post = await postProvider.GetOne(id);
+        _navigationManager.NavigateTo($"/post/{id}/edit");
+    }
+
+}

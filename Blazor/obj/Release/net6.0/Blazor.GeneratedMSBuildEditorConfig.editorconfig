@@ -1,0 +1,92 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = Blazor
+build_property.RootNamespace = Blazor
+build_property.ProjectDir = /Users/megame/projects_/forum/Blazor/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/megame/projects_/forum/Blazor
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/megame/projects_/forum/Blazor/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/megame/projects_/forum/Blazor/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/megame/projects_/forum/Blazor/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/megame/projects_/forum/Blazor/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/megame/projects_/forum/Blazor/Components/CommentAdd/CommentAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Db21tZW50QWRkL0NvbW1lbnRBZGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-hpufbgdi17
+
+[/Users/megame/projects_/forum/Blazor/Components/CommentList/CommentList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Db21tZW50TGlzdC9Db21tZW50TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-dy0albfftr
+
+[/Users/megame/projects_/forum/Blazor/Components/EditPanel/EditPanel.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9FZGl0UGFuZWwvRWRpdFBhbmVsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-3ah553hzu2
+
+[/Users/megame/projects_/forum/Blazor/Components/Footer/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Gb290ZXIvRm9vdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-73vns10a75
+
+[/Users/megame/projects_/forum/Blazor/Components/PostList/PostList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Qb3N0TGlzdC9Qb3N0TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-4pnnm3iaqo
+
+[/Users/megame/projects_/forum/Blazor/Components/PostPreview/PostPreview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Qb3N0UHJldmlldy9Qb3N0UHJldmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-8bwjwi2d46
+
+[/Users/megame/projects_/forum/Blazor/Components/UserList/UserList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Vc2VyTGlzdC9Vc2VyTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-95mwuox6fa
+
+[/Users/megame/projects_/forum/Blazor/Pages/CreatePost.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlUG9zdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-pic64xy0yy
+
+[/Users/megame/projects_/forum/Blazor/Pages/EditPost.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdFBvc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-aonlpqmem3
+
+[/Users/megame/projects_/forum/Blazor/Pages/Forum.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRm9ydW0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-jo6l2gd0xh
+
+[/Users/megame/projects_/forum/Blazor/Pages/PostPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9zdFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-us596019u2
+
+[/Users/megame/projects_/forum/Blazor/Pages/User.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-j1d20de9qe
+
+[/Users/megame/projects_/forum/Blazor/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-qt6tgh2907
+
+[/Users/megame/projects_/forum/Blazor/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-32xpj7b96w

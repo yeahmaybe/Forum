@@ -1,0 +1,41 @@
+@page "/post/create"
+@using Blazor.Data.Models
+@using Blazor.Services
+@using Blazor.Data.DTOs
+@inject NavigationManager _navigationManager
+
+<div class="row justify-content-center">
+    <div class="box col-xl-7 post-form">
+        <legend>Новая публикация</legend>
+        <label class="input-label" for="label">Название</label>
+        <div class="input-wrapper">
+            <input class="input-title" id="label"  @bind="postLabel">
+        </div>
+        <label class="content-label"for="content">Содержимое</label>
+        <textarea class="content-text" id="content" @bind="postContent"></textarea>
+        <div class="post-submit" @onclick="createPost">Опубликовать</div>
+    </div>
+</div>
+@code {
+    [Inject]
+    IUserProvider userProvider { get; set; }
+    
+    [Inject]
+    IPostProvider postProvider { get; set; }
+    
+    private string postLabel;
+    private string postContent;
+
+    private async void createPost()
+    {
+        PostDTO newPost = new PostDTO();
+        newPost.Label = postLabel;
+        newPost.Content = postContent;
+        newPost.Date = DateTime.UtcNow;
+        newPost.User = 1;
+        newPost.Comments = new int[]{};
+
+        await postProvider.Add(newPost);
+        _navigationManager.NavigateTo("/forum");
+    }
+}

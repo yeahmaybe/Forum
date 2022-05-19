@@ -1,0 +1,53 @@
+@using Blazor.Data.Models
+@using Blazor.Services
+@using Blazor.Components.CommentAdd
+@if (post != null)
+{
+   <div class="row justify-content-center">
+      <div class="col-xl-7 box">
+
+         <h3 class="comments">
+            Комментарии
+            <span class="badge bg-secondary">@comments.Count</span>
+         </h3>
+         @if (comments != null)
+         {
+            <ul class="list-group">
+               @foreach (var comment in comments)
+               {
+                  <li class="list-group-item">
+                     <h4 class="comment__author">@comment.User.Nickname</h4>
+                     <p class="comment__contents">@comment.Content</p>
+                  </li>
+               }
+               <CommentAdd PostId ="PostId" />
+            </ul>
+         }
+         @if (comments == null)
+         {
+            <p>Комментариев нет</p>
+         }
+      </div>
+   </div>
+}
+
+@code {
+   [Parameter] 
+   public int PostId { get; set; }
+   private Post? post;
+   
+   private List<Comment>? comments;
+   [Inject]
+   private ICommentProvider commentProvider { get; set; }
+   [Inject]
+   private IPostProvider postProvider { get; set; }
+   [Inject] 
+   private IComparer<Comment> comparer { get; set; }
+
+   protected override async Task OnInitializedAsync()
+   {
+      post = await postProvider.GetOne(PostId);
+      comments = await commentProvider.GetForPost(post.Id);
+      comments.Sort(comparer);
+   }
+}

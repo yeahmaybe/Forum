@@ -1,0 +1,47 @@
+﻿@using Blazor.Data.Models
+@using Blazor.Services
+@inject NavigationManager _navigationManager
+
+<h1>Пользователи форума</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Никнейм</th>
+            <th>Роль</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (users != null)
+        {
+            @foreach (var user in users)
+            {
+                <tr @onclick="()=>toItem(user)">
+                    <td>@user.Id</td>
+                    <td>@user.Username</td>
+                    <td>@user.Nickname</td>
+                    <td>@user.Role</td>
+                </tr>
+            }
+        }
+        @if (users == null)
+        {
+            <p>Ничего не найдено</p>
+        }
+    </tbody>
+</table>
+
+@code{
+    private List<User>? users;
+    [Inject]
+    private IUserProvider userProvider { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        users = await userProvider.GetAll();
+    }
+    public void toItem(User user)
+    {
+        _navigationManager.NavigateTo($"/user/{user.Id}");
+    }
+}
